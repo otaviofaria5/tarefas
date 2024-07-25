@@ -1,0 +1,14 @@
+<mat-toolbar>
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
+   <mat-icon>menu</mat-icon>
+   <mat-menu #menu="matMenu">
+   <button mat-menu-item routerLink="/cadastro">Cadastro</button>
+   <button mat-menu-item routerLink="/usuario">Usuário</button>
+   <button mat-menu-item routerlink="/tarefas">Tarefas</button>
+   </mat-menu>
+  </button>
+   <div class="logo" routerLink="/home">
+     <img src="../../../assets/imagens/logo.png" alt="logo da elumini">
+    </div>
+  <span class="spacer"></span>
+</mat-toolbar>

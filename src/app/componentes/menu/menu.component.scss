@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+
+/* .app-header {} */
+
+.example-icon {
+    margin: 25px;
+  }
+
+  .hi {
+    margin: 0px;
+  }
+  button {
+   flex-grow: 8px;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-toolbar {
+    width: 100vw;
+    background-color: dimgray;
+    color: white;
+    padding: 0;
+  }
+
+  .links-toolbar > * {
+    margin: 8px 8px 8px;
+  }
+
+  .links-toolbar > *:first-child {
+    margin-right: 0;
+  }
+
+  .mat-mdc-outlined-button:not(:disabled) {
+    border-color: #efeeee;
+    color: #ffffff;
+  }
+

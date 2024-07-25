@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+.tela {
+  background-image: url('../../../assets/Imagens/elumini.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 98vw;
+  height: 100vh;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  background-color: dimgray;
+  font-family: "Montserrat", sans-serif;
+  margin: 100px;
+  padding: 35px;
+  font-size: 30px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px #000;
+}
+
+.flex-container > div:hover {
+  cursor: pointer;
+  background-color: rgba(230, 234, 235, 0.526);
+}
+
