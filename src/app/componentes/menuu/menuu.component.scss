@@ -10,16 +10,9 @@
   height: 40px;
   margin: -4px;
 }
-.logo {
-  background-image: url('../../../assets/Imagens/logo.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 180px;
-  height: 60px;
-}
+
 .example-icon {
     margin: 25px;
-    border-color: #efeeee;
   }
 
   .hi {
@@ -54,4 +47,11 @@
     color: #ffffff;
   }
 
-
+  .tela {
+    background-image: url('../../../assets/Imagens/casa.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    margin: 40px;
+  }

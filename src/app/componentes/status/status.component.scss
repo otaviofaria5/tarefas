@@ -14,6 +14,7 @@ app-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
+    border-radius: 60px;
     .full-width {
       grid-column: 1 / span 2;
     }
@@ -40,12 +41,13 @@ app-container {
 
   mat-card-title {
     text-align: center;
-    font-size: 32px;
+    font-size: 50px;
     font-weight: 400;
     margin-bottom: 32px;
     margin-top: 40px;
+    padding: 450px;
+    gap: 10px;
   }
-
 
   mat-card-actions {
     display: flex;
@@ -74,15 +76,28 @@ app-container {
   }
 
   button {
-    img {
-      vertical-align: middle;
-    }
+    background-color: rgba(0, 122, 255, 1);
+    color: white;
+    border-radius: 60px;
+    padding: 10px;
+    width: 150px;
+    height: 40px;
   }
 
   .acessoPerfil {
     display: flex;
     justify-content: space-between;
     margin: 40px 16px 24px 0;
+  }
+
+  .texto {
+    margin: 80px;
+    padding: 80px;
+  }
+
+  .example-full-width {
+    background-color: white;
+    width: 100%;
   }
 
   @media (max-width: 600px) {

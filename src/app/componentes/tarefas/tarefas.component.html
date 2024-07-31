@@ -1,1 +1,61 @@
-<p>tarefas works!</p>
+<app-menuu></app-menuu>
+<app-container>
+ <mat-card>
+  <form [formGroup]="cadastroForm">
+     <mat-card-title>
+      Cadastro De Tarefas
+     </mat-card-title>
+    <mat-card-content>
+     <div class="grid-container">
+
+        <p><label for="w3review">Tarefa</label></p>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Descrição"></textarea>
+        </mat-form-field>
+        <p><label for="w3review">Status</label></p>
+        <mat-form-field>
+         <mat-select disableRipple>
+         <mat-option value="1">Progesso</mat-option>
+         <mat-option value="2">Alinhamento</mat-option>
+         <mat-option value="3">Feito</mat-option>
+         <mat-option value="4">Em Analíse</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+         <mat-label>Usuário</mat-label>
+         <input matInput formControlName="usuario" placeholder="usuário">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+         <mat-label>Data de Inicio</mat-label>
+          <input matInput
+          formControlName="inicio"
+          [matDatepicker]="inicio"
+          placeholder="Data de inicio"
+          >
+         <mat-datepicker-toggle matSuffix [for]="inicio"></mat-datepicker-toggle>
+         <mat-datepicker #inicio formControlName="inicio"></mat-datepicker>
+         <mat-error *ngIf="cadastroForm.get('inicio')?.errors?.['required']">
+          Data de inicio é obrigatória
+          </mat-error>
+       </mat-form-field>
+        <mat-form-field appearance="outline">
+         <mat-label>Data de Fim</mat-label>
+         <input matInput
+          formControlName="fim"
+          [matDatepicker]="fim"
+          placeholder="Data de fim"
+          >
+          <mat-datepicker-toggle matSuffix [for]="fim"></mat-datepicker-toggle>
+          <mat-datepicker #fim></mat-datepicker>
+          <mat-error *ngIf="cadastroForm.get('fim')?.errors?.['required']">
+             Data de fim é obrigatória
+            </mat-error>
+        </mat-form-field>
+           <mat-card-actions class="full-width">
+            <button>Cadastrar</button>
+           </mat-card-actions>
+      </div>
+    </mat-card-content>
+   </form>
+ </mat-card>
+</app-container>

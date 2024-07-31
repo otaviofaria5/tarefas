@@ -27,6 +27,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { TarefasComponent } from './componentes/tarefas/tarefas.component';
 import { StatusComponent } from './componentes/status/status.component';
+import { UsuarioComponent } from './componentes/usuario/usuario.component';
+import { ContainerComponent } from './shared/container/container.component';
+import { MatSelectModule } from '@angular/material/select';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MenuuComponent } from './componentes/menuu/menuu.component';
 
 
 
@@ -37,6 +42,9 @@ import { StatusComponent } from './componentes/status/status.component';
     MenuComponent,
     TarefasComponent,
     StatusComponent,
+    UsuarioComponent,
+    ContainerComponent,
+    MenuuComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -52,7 +60,6 @@ import { StatusComponent } from './componentes/status/status.component';
     ReactiveFormsModule,
     MatInputModule,
     MatGridListModule,
-    MatButtonModule,
     MatNativeDateModule,
     MatCardModule,
     MatButtonToggleModule,
@@ -62,10 +69,12 @@ import { StatusComponent } from './componentes/status/status.component';
     MatChipsModule,
     MatAutocompleteModule,
     MatDialogModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSelectModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
