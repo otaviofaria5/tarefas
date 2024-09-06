@@ -2,6 +2,7 @@ app-container {
   width: 60%;
   margin-bottom: 48px;
   margin-top: 32px;
+  padding: 50px 100px;
 
   .acoesPerfil {
     display: flex;
@@ -9,7 +10,9 @@ app-container {
     justify-content: space-between;
     margin: 12px 16px 12px 0;
   }
-
+  .example-full-width {
+    width: 100%;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -43,10 +46,20 @@ app-container {
     text-align: center;
     font-size: 50px;
     font-weight: 400;
-    margin-bottom: 32px;
+    margin-bottom: 50px;
     margin-top: 40px;
     padding: 450px;
     gap: 10px;
+
+  }
+
+  .texto {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 32px;
+    margin-top: 40px;
+    padding: 1000px;
   }
 
   mat-card-actions {
@@ -60,14 +73,12 @@ app-container {
 
   mat-divider {
     margin: 0 16px;
-    border-top-color: #79747E;
     margin-top: 24px;
   }
 
   h2 {
     font-weight: 400;
     font-size: 22px;
-    color: #1D1B20;
     margin-left: 16px;
   }
 
@@ -100,6 +111,14 @@ app-container {
     width: 100%;
   }
 
+  .mat-form-field {
+    .example-full-width {
+      width: 100%;
+    }
+  }
+  .mdc-text-field--filled:not(.mdc-text-field--disabled){
+    background-color: #E6E0E9;
+  }
   @media (max-width: 600px) {
     .grid-container {
       grid-template-columns: 1fr;
@@ -110,3 +129,98 @@ app-container {
     }
   }
 }
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 98vw;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+
+.mat-toolbar {
+  border: 30px solid transparent;
+  text-align: center;
+  font-size: 30px;
+  background-color:dimgray;
+  color: #111111;
+  padding: 17px;
+	margin-top: 10px;
+  width: 98vw;
+  margin-bottom: 18px;
+}
+table {
+  width: 500px;
+  height: 500px;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+
