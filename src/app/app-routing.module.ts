@@ -4,6 +4,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { TarefasComponent } from './componentes/tarefas/tarefas.component';
 import { StatusComponent } from './componentes/status/status.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
+import { ConsultaComponent } from './componentes/consulta/consulta.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'status',
     component: StatusComponent
+  },
+  {
+    path: 'consulta',
+    component: ConsultaComponent
   }
 ];
 
