@@ -6,14 +6,11 @@
       Cadastro De Tarefas
      </mat-card-title>
     <mat-card-content>
-     <div class="grid-container">
-
-        <p><label for="w3review">Tarefa</label></p>
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width" style="width: 100%">
           <textarea matInput placeholder="Descrição"></textarea>
         </mat-form-field>
-        <p><label for="w3review">Status</label></p>
-        <mat-form-field>
+        <p><label for="w3review" class=>Status</label></p>
+        <mat-form-field style="min-width: 300px;">
          <mat-select disableRipple>
          <mat-option value="1">Progesso</mat-option>
          <mat-option value="2">Alinhamento</mat-option>
@@ -21,6 +18,7 @@
          <mat-option value="4">Em Analíse</mat-option>
           </mat-select>
         </mat-form-field>
+        <div class="grid-container">
         <mat-form-field appearance="outline" class="full-width">
          <mat-label>Usuário</mat-label>
          <input matInput formControlName="usuario" placeholder="usuário">
