@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration,  } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
@@ -10,7 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import {   HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -32,6 +32,8 @@ import { ContainerComponent } from './shared/container/container.component';
 import { MatSelectModule } from '@angular/material/select';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MenuuComponent } from './componentes/menuu/menuu.component';
+import { ConsultaComponent } from './componentes/consulta/consulta.component';
+import { ApiService } from './services/servico/api.service';
 
 
 
@@ -45,6 +47,7 @@ import { MenuuComponent } from './componentes/menuu/menuu.component';
     UsuarioComponent,
     ContainerComponent,
     MenuuComponent,
+    ConsultaComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -70,11 +73,13 @@ import { MenuuComponent } from './componentes/menuu/menuu.component';
     MatAutocompleteModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
   ],
   providers: [
-    provideClientHydration(),
-    provideAnimationsAsync()
+   HttpClientModule,
+   provideClientHydration(),
+   ApiService,
   ],
   bootstrap: [AppComponent]
 })
