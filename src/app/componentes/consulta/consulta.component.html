@@ -1,43 +1,49 @@
 <app-menuu></app-menuu>
 <app-container>
-
+  <mat-card-title>
+   Consulta
+  </mat-card-title>
 </app-container>
-<table mat-table [dataSource]="data" class="mat-elevation-z8">
+<div id="divBusca">
+  <input type="text" id="txtBusca" placeholder="Pesquisa"/>
+  <mat-icon>search</mat-icon>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Implicit Column -->
-  <ng-container matColumnDef="$implicit">
-    <th mat-header-cell *matHeaderCellDef> Tarefa</th>
-    <td mat-cell *matCellDef="let data"> {{data}} </td>
+  <ng-container matColumnDef="descricao">
+    <th mat-header-cell *matHeaderCellDef>Descrição</th>
+    <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
   </ng-container>
 
   <!-- Index Column -->
-  <ng-container matColumnDef="index">
-    <th mat-header-cell *matHeaderCellDef> Data De Inicio </th>
-    <td mat-cell *matCellDef="let index = index"> {{index}} </td>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.id_status_atual}} </td>
   </ng-container>
 
   <!-- Count Column -->
-  <ng-container matColumnDef="count">
-    <th mat-header-cell *matHeaderCellDef> Data De Fim </th>
-    <td mat-cell *matCellDef="let count = count"> {{count}} </td>
+  <ng-container matColumnDef="usuario">
+    <th mat-header-cell *matHeaderCellDef>Usuário</th>
+    <td mat-cell *matCellDef="let element"> {{element.usuario}} </td>
   </ng-container>
 
   <!-- First Column -->
   <ng-container matColumnDef="first">
-    <th mat-header-cell *matHeaderCellDef> Status De Id </th>
-    <td mat-cell *matCellDef="let first = first"> {{first}} </td>
+    <th mat-header-cell *matHeaderCellDef>Data De Inicio</th>
+    <td mat-cell *matCellDef="let element"> {{element.data_inicio}} </td>
   </ng-container>
 
   <!-- Last Column -->
-  <ng-container matColumnDef="last">
-    <th mat-header-cell *matHeaderCellDef> Usuário </th>
-    <td mat-cell *matCellDef="let last = last"> {{last}} </td>
+  <ng-container matColumnDef="data_fim">
+    <th mat-header-cell *matHeaderCellDef>Data De Fim </th>
+    <td mat-cell *matCellDef="let element"> {{element.data_termino}} </td>
   </ng-container>
 
   <!-- Even Column -->
   <ng-container matColumnDef="editar">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">
-      <button mat-stroked-button color="rgba(246, 152, 11, 1)">Editar</button>
+    <mat-icon (click)="editarUser(element.id)">assignment</mat-icon>
     </td>
   </ng-container>
 
@@ -45,7 +51,7 @@
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">
-      <button mat-stroked-button background-color="warn">Delete</button>
+      <mat-icon (click)="deleteUser(element.id)">delete</mat-icon>
     </td>
   </ng-container>
 
@@ -54,5 +60,5 @@
 </table>
 
 <mat-card-actions class="full-width">
-  <button>Incluir</button>
+  <button (click)="onClick()">Incluir</button>
  </mat-card-actions>
