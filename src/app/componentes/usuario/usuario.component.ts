@@ -1,5 +1,6 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-usuario',
@@ -9,18 +10,29 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class UsuarioComponent implements OnInit{
   displayedColumns = ['nome_usuario', 'matricula_usuario', 'data_inicio', 'editar', 'delete'];
   dataSource!: [];
-  expandedElement! : | null;
+  expandedElement! : Usuario | null;
   columnsToDisplayWithExpand = [...this.displayedColumns, 'expand'];
   cadastroForm!: FormGroup;
 
   ngOnInit() {
     this.cadastroForm = new FormGroup({
       nome: new FormControl(),
-      matricula: new FormControl(),
-      inicio: new FormControl(),
+     matricula: new FormControl(),
+     inicio: new FormControl(),
   });
   }
+ // public getJsonValue: any;
+ // public postJsonValue: any;
+ // constructor(private http: HttpClient) {}
 
+ /* public getUsuario(){
+    this.http.get('https://reconecti-se-backend2024-d0d2d726f82c.herokuapp.com/api/usuario').subscribe((data : any) => {
+    this.dataSource = data.Usuario;
+    console.log(data);
+    this.getJsonValue= data;
+    }
+  )
+  } */
   deleteUser(id : number) {
       }
 

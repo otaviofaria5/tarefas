@@ -1,5 +1,7 @@
 import { Component ,OnInit} from '@angular/core';
-import { ApiService } from '../../services/servico/api.service';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
+import { DataSource } from '@angular/cdk/collections';
+
 
 @Component({
   selector: 'app-status',
@@ -8,24 +10,26 @@ import { ApiService } from '../../services/servico/api.service';
 })
 export class StatusComponent implements OnInit{
   displayedColumns = ['descricao', 'identificador', 'editar', 'delete'];
-  dataSource!: Usuario[];
-  expandedElement! : Usuario | null;
+  dataSource!: Status[];
+  expandedElement! : Status| null;
   columnsToDisplayWithExpand = [...this.displayedColumns, 'expand'];
 
-
-  constructor(private _service : ApiService) {}
+  public getJsonValue: any;
+  public postJsonValue: any;
+  constructor(private http: HttpClient) {}
   ngOnInit(){
-    this.getStatus()
+    this.getStatus();
+
   }
 
-  getStatus(){
-    this._service.getStatus().subscribe((data : any) => {
-      this.dataSource = data.status;
-      console.log(data.status[0])
-    })
+  public getStatus(){
+    this.http.get('https://reconecti-se-backend2024-d0d2d726f82c.herokuapp.com/api/status').subscribe((data : any) => {
+    this.dataSource = data;
+    console.log(data);
+    return this.http.get;
+    }
+  )
   }
-
-
   deleteUser(id : number) {
   }
 
@@ -33,10 +37,12 @@ export class StatusComponent implements OnInit{
 
  }
 }
-export interface Usuario {
+
+export interface Status{
+  descricao: "string"
   id: "string",
   identificador: "string",
-  descricao: "string"
 }
+
 
 
