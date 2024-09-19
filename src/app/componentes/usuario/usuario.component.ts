@@ -21,18 +21,18 @@ export class UsuarioComponent implements OnInit{
      inicio: new FormControl(),
   });
   }
- // public getJsonValue: any;
- // public postJsonValue: any;
- // constructor(private http: HttpClient) {}
+ public getJsonValue: any;
+ public postJsonValue: any;
+ constructor(private http: HttpClient) {}
 
- /* public getUsuario(){
+  public getUsuario(){
     this.http.get('https://reconecti-se-backend2024-d0d2d726f82c.herokuapp.com/api/usuario').subscribe((data : any) => {
     this.dataSource = data.Usuario;
     console.log(data);
     this.getJsonValue= data;
     }
   )
-  } */
+  }
   deleteUser(id : number) {
       }
 
