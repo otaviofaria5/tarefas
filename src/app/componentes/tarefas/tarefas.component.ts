@@ -1,5 +1,6 @@
 import { FormControl, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tarefas',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarefasComponent implements OnInit{
   cadastroForm!: FormGroup;
+  private router: Router = new Router;
 
   ngOnInit() {
     this.cadastroForm = new FormGroup({
@@ -16,4 +18,9 @@ export class TarefasComponent implements OnInit{
       fim: new FormControl(),
   });
   }
+
+  onClick() {
+    this.router.navigate(['/consulta']);
+
+}
 }
