@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 
@@ -20,6 +20,7 @@ export class UsuarioComponent implements OnInit{
      matricula: new FormControl(),
      inicio: new FormControl(),
   });
+    this.getUsuario();
   }
  public getJsonValue: any;
  public postJsonValue: any;
@@ -27,7 +28,7 @@ export class UsuarioComponent implements OnInit{
 
   public getUsuario(){
     this.http.get('https://reconecti-se-backend2024-d0d2d726f82c.herokuapp.com/api/usuario').subscribe((data : any) => {
-    this.dataSource = data.Usuario;
+    this.dataSource = data;
     console.log(data);
     this.getJsonValue= data;
     }
