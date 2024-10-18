@@ -1,5 +1,12 @@
 import { Component ,OnInit} from '@angular/core';
 import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
+import { DataSource } from '@angular/cdk/collections';
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
+  })
+};
 
 
 @Component({
@@ -22,7 +29,7 @@ export class StatusComponent implements OnInit{
   }
 
   public getStatus(){
-    this.http.get('https://reconecti-se-backend2024-d0d2d726f82c.herokuapp.com/api/status').subscribe((data : any) => {
+    this.http.get('https://reconecti-se-backend2024-d0d2d726f82c.herokuapp.com/api/status', httpOptions).subscribe((data : any) => {
     this.dataSource = data;
     console.log(data);
     return this.http.get;

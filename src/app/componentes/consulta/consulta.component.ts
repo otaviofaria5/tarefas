@@ -1,6 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
+  })
+};
 
 
 @Component({
@@ -25,7 +31,7 @@ export class ConsultaComponent {
     }
 
     public getTarefas(){
-      this.http.get('https://reconecti-se-backend2024-d0d2d726f82c.herokuapp.com/api/tarefas').subscribe((data : any) => {
+      this.http.get('https://reconecti-se-backend2024-d0d2d726f82c.herokuapp.com/api/tarefas',httpOptions).subscribe((data : any) => {
       this.dataSource = data;
       console.log(data);
       return this.http.get
@@ -33,6 +39,12 @@ export class ConsultaComponent {
     )
   }
   deleteUser(id : number) {
+    this.http.delete('https://reconecti-se-backend2024-d0d2d726f82c.herokuapp.com/api/tarefas',httpOptions).subscribe((data: any) => {
+      if(data.isDeleted) {
+        alert('Usuario deletado com sucesso.');
+        this.getTarefas();
+      }
+    })
   }
   editarUser(id: number) {
 
