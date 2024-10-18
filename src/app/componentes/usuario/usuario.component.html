@@ -9,19 +9,19 @@
         <div class="grid-container">
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Nome</mat-label>
-            <input matInput formControlName="nome" placeholder="Nome">
+            <input matInput formControlName="nome_usuario" placeholder="Nome">
             <mat-error *ngIf="cadastroForm.get('nome')?.errors">Nome é obrigatório</mat-error>
           </mat-form-field>
           <div class="radio-group">
             <mat-form-field appearance="outline" class="matricula" style="min-width: 190px; width: 450px;">
               <mat-label>Matricula</mat-label>
-              <input matInput formControlName="matricula" placeholder="Digite sua matricula">
+              <input matInput formControlName="matricula_usuario" placeholder="Digite sua matricula">
               <mat-error *ngIf="cadastroForm.get('matricula')?.errors">Matricula é obrigatória</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="data" style="min-width: 190px; width: 450px;">
               <mat-label>Data de Inicio</mat-label>
               <input matInput
-                formControlName="inicio"
+                formControlName="data_inicio"
                 [matDatepicker]="inicio"
                 placeholder="Data de inicio"
               >
