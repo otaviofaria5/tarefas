@@ -8,7 +8,6 @@ const httpOptions = {
     'Access-Control-Allow-Origin': '*'
   })
 };
-
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
